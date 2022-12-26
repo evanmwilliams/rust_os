@@ -11,6 +11,7 @@ pub mod gdt;
 pub mod interrupts;
 pub mod serial;
 pub mod vga_buffer;
+pub mod memory;
 
 pub trait Testable {
     fn run(&self) -> ();
@@ -64,11 +65,17 @@ pub fn hlt_loop() -> ! {
     }
 }
 
-/// Entry point for `cargo xtest`
 #[cfg(test)]
-#[no_mangle]
-pub extern "C" fn _start() -> ! {
-    init(); // new
+use bootloader::{entry_point, BootInfo};
+
+#[cfg(test)]
+entry_point!(test_kernel_main);
+
+/// Entry point for `cargo test`
+#[cfg(test)]
+fn test_kernel_main(_boot_info: &'static BootInfo) -> ! {
+    // like before
+    init();
     test_main();
     hlt_loop();
 }
