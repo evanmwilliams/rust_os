@@ -11,12 +11,14 @@ use rust_os::println;
 pub extern "C" fn _start() -> ! {
     println!("Hello World{}", "!");
 
-    rust_os::init(); // new 
+    rust_os::init();
 
-    // invoke a breakpoint exception 
-    x86_64::instructions::interrupts::int3(); // new 
+    // uncomment below to trigger a stack overflow
+    // fn stack_overflow() {
+    //     stack_overflow(); // for each recursion, the return address is pushed
+    // }
+    // stack_overflow();
 
-    // as before 
     #[cfg(test)]
     test_main();
 
