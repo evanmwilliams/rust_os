@@ -22,5 +22,5 @@ The application includes many different functionalities including:
 
 Here's a sample of the OS running: 
 
-![Sample execution of OS] (./rust_os_image.png)
+![Sample execution of OS](./rust_os_image.png)
 
