@@ -4,7 +4,7 @@ My implementation of a bare metal operating system in Rust. I created this follo
 
 ## Running the application
 
-You need to have Rust installed to run the application. Once you do, you can simply type `cargo run` in your terminal 
+You need to have Rust installed to run the application. Once you do, you can simply type `cargo run` in your terminal!
 
 ## Testing 
 
