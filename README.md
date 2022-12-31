@@ -12,10 +12,10 @@ To run all of the unit tests run `cargo test` from any directory. All unit tests
 
 ## Dependencies 
 This project has many external dependencies on libraries that assist with OS development. All of these dependencies are managed by `cargo`, the build system shipped with Rust. Some of these external packages include: 
-* Bootloader: https://github.com/rust-osdev/bootloader
-* x86_64: https://github.com/rust-osdev/x86_64
-* uart_16550: https://crates.io/crates/uart_16550
-* pic_8259: https://crates.io/crates/pic8259
+* `Bootloader`: https://github.com/rust-osdev/bootloader
+* `x86_64`: https://github.com/rust-osdev/x86_64
+* `uart_16550`: https://crates.io/crates/uart_16550
+* `pic_8259`: https://crates.io/crates/pic8259
 
 Moreover, the code base uses Nightly Rust with some experimental features that are not yet included in the main language.
 
