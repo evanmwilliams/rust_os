@@ -22,4 +22,4 @@ The application includes many different functionalities including:
 
 Here's a sample of the OS running: 
 
-![rust_os image] (.images/rust_os.png)
+![rust_os image] (images/rust_os.png)
