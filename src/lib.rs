@@ -4,6 +4,7 @@
 #![feature(abi_x86_interrupt)]
 #![feature(alloc_error_handler)]
 #![test_runner(crate::test_runner)]
+#![feature(const_mut_refs)]
 #![reexport_test_harness_main = "test_main"]
 
 extern crate alloc;
