@@ -1,7 +1,7 @@
 use alloc::alloc::{GlobalAlloc, Layout};
 use bump::BumpAllocator;
 use core::ptr::null_mut;
-use linked_list_allocator::LockedHeap;
+use linked_list::LinkedListAllocator;
 use x86_64::{
     structures::paging::{
         frame, mapper::MapToError, FrameAllocator, Mapper, Page, PageTableFlags, Size4KiB,
@@ -16,10 +16,10 @@ pub const HEAP_START: usize = 0x_4444_4444_0000;
 pub const HEAP_SIZE: usize = 100 * 1024; // 100 KiB
 
 // #[global_allocator]
-// static ALLOCATOR: LockedHeap = LockedHeap::empty();
+// static ALLOCATOR: Locked<BumpAllocator> = Locked::new(BumpAllocator::new());
 
 #[global_allocator]
-static ALLOCATOR: Locked<BumpAllocator> = Locked::new(BumpAllocator::new());
+static ALLOCATOR: Locked<LinkedListAllocator> = Locked::new(LinkedListAllocator::new());
 
 pub fn init_heap(
     mapper: &mut impl Mapper<Size4KiB>,
