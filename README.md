@@ -33,6 +33,9 @@ Here's a sample of the OS running:
 
 ![Sample execution of OS](./rust_os_image.png)
 
+## Documentation
+To see documentation, run `cargo doc --open` from your terminal. 
+
 ## Future Work
 
 Many of the fundamental ideas behind operating systems have been implemented, but it would be cool to try implementing more user-friendly features, such as file-systems or actually getting processes to run! 
